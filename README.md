@@ -44,5 +44,8 @@ Implementing a PosDB with real database is very much welcome.
 
 Please use asciinema (https://asciinema.org) to record a demo and submit the url in QQ group. 
 
-And please elaborate your understanding in layered systems via this homework in your README.md.
+And please elaborate your understanding in layered systems via this homework in your README.md.  
+  
+## 我的理解  
 
+不同层的操作应当相互独立，具有较低的耦合性。但是在实际的操作过程中，仍然会或多或少受到其他层的影响。数据层用于对数据进行操作，业务层通过数据层的接口调取修改数据，显示层通过业务层的接口对用户进行显示。

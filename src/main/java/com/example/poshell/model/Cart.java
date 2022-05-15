@@ -14,6 +14,14 @@ public class Cart {
         return items.add(item);
     }
 
+    // public double total(){
+    //     double total=0;
+    //     for(Item item:items){
+    //         total+=item.getAmount()*item.getProduct().getPrice();
+    //     }
+    //     return total;
+    // }
+
     @Override
     public String toString() {
         if (items.size() ==0){

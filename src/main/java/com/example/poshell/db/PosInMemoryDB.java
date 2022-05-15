@@ -1,6 +1,8 @@
 package com.example.poshell.db;
 
 import com.example.poshell.model.Cart;
+import com.example.poshell.model.Item;
+import com.example.poshell.model.Order;
 import com.example.poshell.model.Product;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +14,8 @@ public class PosInMemoryDB implements PosDB {
     private List<Product> products = new ArrayList<>();
 
     private Cart cart;
+
+    private Order order;
 
     @Override
     public List<Product> getProducts() {
@@ -39,9 +43,20 @@ public class PosInMemoryDB implements PosDB {
         return null;
     }
 
+    @Override
+    public void checkout(Cart cart){
+        order.addCart(cart);
+    }
+
+    @Override
+    public Order getOrder(){
+        return this.order;
+    }
+
     private PosInMemoryDB() {
         this.products.add(new Product("PD1", "iPhone 13", 8999));
         this.products.add(new Product("PD2", "MacBook Pro", 29499));
+        order=new Order();
     }
 
 }
